@@ -7,7 +7,7 @@ namespace Gestao_de_Vendedores.Models
     public class Departamento
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Nome { get; set; }
         public ICollection<Vendedor> Vendedores { get; set; } = new List<Vendedor>();
 
         public Departamento()
@@ -15,10 +15,10 @@ namespace Gestao_de_Vendedores.Models
 
         }
 
-        public Departamento(int id, string name)
+        public Departamento(int id, string nome)
         {
             Id = id;
-            Name = name;
+            Nome = nome;
         }
 
         public void AdicionarVendedor(Vendedor vendedor)

@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Gestao_de_Vendedores.Services;
 
 namespace Gestao_de_Vendedores
 {
@@ -26,6 +27,8 @@ namespace Gestao_de_Vendedores
         {
             services.AddControllersWithViews();
             services.AddDbContext<Context>();
+            services.AddScoped<VendedorService>();
+            services.AddScoped<DepartamentoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

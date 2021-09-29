@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Gestao_de_Vendedores.Services
 {
@@ -15,9 +16,9 @@ namespace Gestao_de_Vendedores.Services
             _context = context;
         }
 
-        public List<Departamento> FindAll()
+        public async Task<List<Departamento>> FindAllAsync()
         {
-            return _context.Departamentos.OrderBy(x => x.Nome).ToList();
+            return await _context.Departamentos.OrderBy(x => x.Nome).ToListAsync();
         }
     }
 }
